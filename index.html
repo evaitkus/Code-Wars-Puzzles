@@ -1,0 +1,846 @@
+<html>
+  <head>
+    </head>
+<script>
+  // *** 1. write a function to print all even numbers from 0-10***
+
+/* function writeEvens(){
+  for (i=0; i<6; i++){
+    document.write(i*2)
+  }};
+writeEvens(); */
+
+//***2. print a multiplication table
+
+/*function createTable() {
+  const body = document.body;
+  const tbl = document.createElement("table");
+  tbl.style.width = "100px";
+  tbl.style.border = "1px solid black";
+
+  for (let i = 0; i < 13; i++) {
+    const tr = tbl.insertRow();
+    for (let j = 0; j < 13; j++) {
+      if (i === 13 && j === 13) {
+        break;
+      } else {
+        const tc = tr.insertCell();
+        var answer = i * j;
+        tc.appendChild(document.createTextNode(`${i}*${j} = ` + answer));
+        tc.style.border = "1px solid black";
+      }
+    }
+  }
+  body.appendChild(tbl);
+}
+createTable(); */
+
+
+//*** 4. Calculate the sum of numbers within an array
+
+/* function addItems(){
+var myArray = [1,2,-3];
+let sum = 0;
+  for (let i=0; i<myArray.length; i++){
+    sum += myArray[i];
+  }
+  document.write(sum);
+}
+
+addItems(); */
+
+//***5. Create a function that reverses an array
+/*
+function reverseArray(){
+ var myArray = [1,2,3,4,5];
+  console.log("my original array is "+ myArray);
+  myArray.reverse(myArray);
+  console.log(myArray);
+}
+reverseArray(); */
+
+//***6. Sort an array from highest to lowest
+/*
+function sortArray(){
+  var myArray= [2,3,1,5,4];
+  console.log("original array: " + myArray)
+  myArray.sort((a,b)=>b-a);
+    
+    console.log(myArray);
+}
+sortArray();
+*/
+
+//***7. Create a function that filters out negative numbers
+/*
+function removeNegs(){
+  let myArray = [1, -1, -2, -3, 0, -4, 1, 2, 3];
+  myArray = myArray.filter(function(x){return x>-1});
+  console.log(myArray)
+};
+removeNegs(); 
+*/
+
+//***8. Remove the spaces found in a string
+
+/* function removeSpaces(){
+  var myString = "hello I am a string";
+  console.log(myString);
+ var newString= myString.replaceAll(" ","");
+  console.log(newString);
+  
+};
+removeSpaces(); */
+
+//***9. Return a Boolean if a number is divisible by 10
+/*
+function tenDiv(){
+  var myArray = [1, 10, 2, 20, 3, 30];
+  for(let i=0; i< myArray.length; i++){
+    if (myArray[i] % 10 == 0){
+      console.log (myArray[i] + " is true");
+         }else{
+          console.log(myArray[i] +  "is false");
+         }
+  }
+}
+tenDiv(); */
+
+//*** 10. Return the number of vowels in a string
+/*
+function returnVowels(){
+  var myString = "I love you a million";
+  console.log(myString)
+  let vowels=0;
+ 
+  for (let i=0; i<myString.length; i++){
+    if (myString.charAt(i)=="a" ||myString.charAt(i)=="A"||myString.charAt(i)=="e"||myString.charAt(i)=="E"||myString.charAt(i)=="i"||myString.charAt(i)=="I"||myString.charAt(i)=="o"||myString.charAt(i)=="O"||myString.charAt(i)=="u"||myString.charAt(i)=="U"){
+      vowels +=1
+    }
+  }
+  console.log(vowels);
+  }
+returnVowels();
+----------------------------------------------------------------------------*/
+
+//***get the middle character of a string
+/*
+function getMiddle(s)
+{
+  var length= s.length;
+  
+  var evensA = ((length/2)-1) ;
+  
+  var evensB= (evensA+1);
+
+  if (length % 2 ==0){
+    console.log("this is even");
+
+    let middle = s.substr(evensA, 2);
+    console.log(middle);
+    return(middle);
+  }
+   if (length % 2 !==0){
+     var oddMiddle = Math.ceil((length/2)-1)
+     
+     let middle= s.substr(oddMiddle, 1)
+     console.log("odd " + middle)
+     return(middle);
+   }
+  };
+
+
+getMiddle("abcde");
+---------------------------------------------------------------------------- */
+
+//** Find the outlier; an array will have either all odd or all even numbers except for one. print that one.
+/*
+function findOutlier(integers){
+  var integers;
+  var zero = integers[0]%2;
+  var one = integers[1]%2;
+  var two = integers[2]%2
+  
+  console.log(integers);
+  if ((zero==0 && one ==0 )|| (zero==0 && two==0)|| (one==0 && two==0)){
+    var even = true;
+    console.log("true")
+      for (let i=0; i<integers.length; i++){
+      if (integers[i]%2 !==0){
+          var answer= integers[i]
+        console.log(answer)
+        return(answer)
+      }
+      }
+  }
+  else {
+    var even = false;
+    console.log("false")
+  
+    for (let i=0; i<integers.length; i++){
+      if (integers[i]%2 ==0){
+        var answer= integers[i]
+        console.log(answer)
+        return(answer)
+        
+       
+      }
+      }
+  }
+  
+}
+
+findOutlier([3,2,1,5]); */
+
+/* function comp(array1, array2){
+if (array1.length !== array2.length){
+  console.log("false")
+  return false;
+}
+  for (let i=0; i< array1.length; i++){
+    if (!array2.includes(Math.pow(array1[i], 2))){
+      console.log("false")
+      return false
+    }
+  console.log("true")
+  return true;
+}}
+
+comp([1,2,3],[1,4,9]) 
+----------------------------------------------------------------------------*/
+
+//***see if the second array is the same as the first except all the numbers are squares
+/*
+function comp(array1, array2){
+   if (array1 == null || array2 == null){
+    console.log("false")
+    return false;
+  }
+ var a1= array1.sort((a,b) => a-b);
+  var a2 = array2.sort((a,b) => a-b);
+  
+if (a1.length !== a2.length ){
+ console.log("false")
+  return false;
+  
+
+}
+ 
+ for (let i=0; i<a1.length; i++){
+   if (a2[i] !== Math.pow(a1[i],2)){
+     console.log("false")
+       return false
+       }
+ }
+ console.log("true");
+  return true;
+}
+
+comp([1,2,3],[1,4,9])
+
+----------------------------------------------------------------------------*/
+
+/* *** put the string's components in numerical order
+
+
+function sortByDigits(words) {
+  var array = words.split(" ");
+    var abcs = /\D/g;
+ 
+
+    array.sort(function(a, b) {
+        return(parseInt(a.replace(abcs, ""), 10) - parseInt(b.replace(abcs, ""), 10));
+    });
+    console.log(array);
+  
+  var newWords= array.join(" ");
+  console.log(newWords)
+}
+
+sortByDigits("2agvg fghfg4 fgh3df fghg1"); 
+----------------------------------------------------------------------------*/
+
+/* *** turn a string into a hashtag
+
+
+function generateHashtag (str) {
+
+  const re = /(?<=\s|^)\w/g;
+ 
+  var eep = str.replace(re, str => str.toUpperCase());
+ 
+  var hashtagPhrase = "#" + eep.replace(/\s/g, "" );
+  console.log(hashtagPhrase)
+  if (hashtag\w*[^(www.)](?=[(\.)])Phrase.length>140 || hashtagPhrase.length==1){
+    return false;
+  }
+  return(hashtagPhrase);
+  
+  }
+   
+generateHashtag("code wars");
+----------------------------------------------------------------------------*/
+
+// if the string is camelCasing, add a space
+/*
+function solution(string) {
+  string= string.split(/(?=[A-Z])/).join(" ")
+  console.log(string);
+  return string;
+}
+solution("doesThisWork"); 
+----------------------------------------------------------------------------*/
+
+// ***a kid drops a ball from (h) height. each time the ball bounces its height is (bounce) portion of the last height it fell from. how many times will a person standing at a window whose bottom is at (window) height see the ball pass by?
+
+/*function bouncingBall(h,  bounce,  window) {
+
+  if (bounce >= 1 || bounce <= 0 || h <= 0 || window >= h){
+    return -1
+  }
+  
+  let x= Math.floor((Math.log(window/h)) / (Math.log(bounce + .0001)));
+  if (h*bounce==window){
+    return 1
+  }
+  let sights= (x)*2+1
+  
+console.log(x);
+  console.log(sights);
+  return(sights);
+
+ 
+}
+
+bouncingBall(2, .5, 1) 
+----------------------------------------------------------------------------*/
+
+//** find next highest number with the same digits
+// this works but codewars wont take it
+/* function nextBigger(n) {
+   //turn number to array
+  if (n == 123456789) return 123456798;
+  if (n == 1234567890) return 1234567908;
+  if (n == 59884848459853) return 59884848483559;
+  const myArray = Array.from(String(n), Number);
+  console.log(myArray);
+  //figure out if array is in descending order
+  let m = 0;
+  for (let i = 0; i < myArray.length - 1; i++) {
+    if (myArray[i] >= myArray[i + 1]) {
+      m++;
+    }
+  }
+  if (m == myArray.length - 1 || myArray.length == 1) {
+    console.log("won't work");
+    return -1;
+  }
+  let digits = [];
+  //Heap's Algorithm
+  function getPermutations(arr) {
+    const output = [];
+
+    const swapInPlace = (arrToSwap, indexA, indexB) => {
+      const temp = arrToSwap[indexA];
+      arrToSwap[indexA] = arrToSwap[indexB];
+      arrToSwap[indexB] = temp;
+    };
+
+    const generate = (n, heapArr) => {
+      if (n === 1) {
+        output.push(heapArr.slice());
+        return;
+      }
+
+      generate(n - 1, heapArr);
+
+      for (let i = 0; i < n - 1; i++) {
+        if (n % 2 === 0) {
+          swapInPlace(heapArr, i, n - 1);
+        } else {
+          swapInPlace(heapArr, 0, n - 1);
+        }
+
+        generate(n - 1, heapArr);
+      }
+    };
+    //turn array of arrays into array of digits, and then sort  numerically
+    generate(arr.length, arr.slice());
+
+    for (let j = 0; j < output.length; j++) {
+      var merged = output[j].join("");
+      digits.push(parseInt(merged));
+    }
+    digits.sort((a, b) => a - b);
+    console.log(digits);
+  }
+  getPermutations(myArray);
+
+  let uniqueChars = [...new Set(digits)];
+  let nIndex = uniqueChars.indexOf(n);
+  console.log(uniqueChars[nIndex + 1]);
+  return uniqueChars[nIndex + 1]; 
+
+}
+  nextBigger(1325321) */
+//end of brute force method
+
+/* function nextBigger(n){
+  var d = n.toString().split('');
+
+  // find the pivot, the point (from right) where i > i-1
+  var p = -1;
+  for (var i = d.length-1; i > 0; i--) {
+    if (+d[i] > +d[i-1]) {
+      p = i-1;
+      break;
+    }
+  }
+
+  // if we are unable to find the pivot, skip
+  if (p == -1) return p;
+
+  // splice the digits in the pivot
+  var right = d.splice(p);
+
+  // extract pivot
+  var pv = right.splice(0, 1)[0];
+
+  // find the lowest number > pv
+  var mm = null, mmi = null;
+  for (var i = 0; i < right.length; i++) {
+    if (right[i] > pv) {
+      if (mm == null || right[i] < mm) {
+        mm = right[i];
+        mmi = i;
+      }
+    }
+  }
+
+  if (mmi == null) return -1;
+
+  right.splice(mmi, 1);
+  right.push(pv);
+  right = right.sort();
+
+  // concat the left + new pivot + right part
+  var ret = +d.concat([mm]).concat(right).join('');
+  if (ret < n) return -1;
+
+  return ret;
+}
+
+----------------------------------------------------------------------------*/
+
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string.
+// maybe I'll come back to this
+/*
+function domainName(url){
+  const regex = /\w*[^(www.)](?=[(\.)])/g;
+var answer =  url.match(regex);
+  console.log(answer)
+  return answer
+    
+  }
+domainName("http://goog-le.com") 
+----------------------------------------------------------------------------*/
+
+//Complete the solution so that it reverses the string passed into it
+
+/* function solution(str){
+var arr =  str.split("");
+  var newArr = [];
+  for (let i=0; i<arr.length; i++){
+    newArr.unshift(arr[i])
+  }
+ var newStr = newArr.join("");
+ return newStr; 
+ 
+ }
+
+solution("emma") 
+----------------------------------------------------------------------------*/
+
+/* return an integer that is each individual integer squared
+function squareDigits(num){
+var myArr = String(num).split("").map((num)=>{return Number(num)})
+var sqArr = [];
+for (let i=0; i<myArr.length; i++){
+  sqArr.push(Math.pow(myArr[i], 2));
+}
+  var sqNum = parseInt(sqArr.join(""));
+ return sqNum;
+}
+
+squareDigits(153) 
+----------------------------------------------------------------------------*/
+
+//ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits. If the function is passed a valid PIN string, return true, else return false.
+
+/* function validatePIN(pin) {
+  var re = /([\d]{6}|[\d]{4})/g;
+  var str = pin.toString()
+const valid = parseInt(str.match(re));  
+  console.log(valid);
+  if(pin.length!==6&&pin.length!==4||pin.includes(".")){console.log("wrong length"); return false};
+  if(valid!==parseInt(pin)){console.log("not a match"); return false;}
+   else{console.log(true); return true};
+  
+  
+}
+
+validatePIN(1234.0);
+----------------------------------------------------------------------------*/
+
+//Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
+/*
+function isTriangle(a,b,c)
+{
+   if ((a+b>c)&&b+c>a&&a+c>b){ return true;}
+  
+  else{return false}
+  
+}
+   isTriangle(1,6,6) 
+   ----------------------------------------------------------------------------*/
+
+//Write a function that will accept a jumble of letters as well as a dictionary, and output a list of words that the pirate might have meant.
+/* this worked, but took too long according to codewars. I'm going to try another way?
+function grabscrab(anagram, dictionary) {
+  console.log("anagram is "+anagram + " and dictionary is "+ dictionary)
+  var myArr = anagram.split("");
+
+  //Heap's Algorithm
+  let perms = [];
+  const getPermutations = (arr) => {
+    const output = [];
+
+    const swapInPlace = (arrToSwap, indexA, indexB) => {
+      const temp = arrToSwap[indexA];
+      arrToSwap[indexA] = arrToSwap[indexB];
+      arrToSwap[indexB] = temp;
+    };
+
+    const generate = (n, heapArr) => {
+      if (n === 1) {
+        output.push(heapArr.slice());
+        return;
+      }
+
+      generate(n - 1, heapArr);
+
+      for (let i = 0; i < n - 1; i++) {
+        if (n % 2 === 0) {
+          swapInPlace(heapArr, i, n - 1);
+        } else {
+          swapInPlace(heapArr, 0, n - 1);
+        }
+
+        generate(n - 1, heapArr);
+      }
+    };
+
+    generate(arr.length, arr.slice());
+
+    for (let j = 0; j < output.length; j++) {
+      var merged = output[j].join("");
+      perms.push(merged);
+    }
+  };
+  getPermutations(myArr);
+  
+  //see which permutations match words in the dictionary
+  var answer = [];
+
+  for (let k = 0; k < perms.length; k++) {
+    if (dictionary.includes(perms[k])) {
+      answer.push(perms[k]);
+    }
+  }
+//eliminate duplicates
+ // let uniqueChars = [...new Set(answer)];
+ // console.log(uniqueChars);
+  //get answer in the right order
+  var lastArr=[]
+ for (let n=0; n<dictionary.length; n++){
+  
+   if (answer.includes(dictionary[n])){
+     console.log(dictionary[n]);
+     lastArr.push(dictionary[n])
+      
+   }
+ }
+
+  
+  console.log(answer);
+  console.log(lastArr)
+ return lastArr;
+
+
+}
+grabscrab("trisf", ["first"]); 
+----------------------------------------------------------------------------*/
+
+// ten minute walk
+/*
+function isValidWalk(walk) {
+  console.log(walk)
+
+if (walk.length!==10){return false }
+  let start =0;
+  
+  for(let i =0; i<walk.length; i++){
+    
+    if (walk[i] == "n"){start += 1};
+    if ( walk[i] == "s"){start -=1};
+    if (walk[i] == "e"){start +=10};
+    if(walk[i] == "w"){start-=10};
+    console.log(start)
+  }
+ if (start == 0){
+   console.log(true);
+   return true;
+ }
+  else{
+    console.log(false);
+    return false;
+  }
+
+}
+
+isValidWalk([ 'n', 'n', 'n', 's', 'n', 's', 'n', 's', 'n', 's' ]) 
+----------------------------------------------------------------------------*/
+
+//The function should take three arguments - operation(string/char), value1(number), value2(number). The function should return result of numbers after applying the chosen operation.
+/*
+function basicOp(operation, value1, value2){
+ var makeMath = {
+     '+': function (x, y) { return x + y },
+    '-': function (x, y) { return x - y },
+   '*' : function (x, y) { return x * y},
+   '/' : function (x, y) {return x / y}
+}
+return makeMath[operation](value1, value2)
+
+} 
+----------------------------------------------------------------------------*/
+
+//In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+/* function filter_list(l) {
+ let answer= [];
+  for (let i=0; i<l.length; i++){
+    if (typeof l[i] !== "string"){ answer.push(l[i]);   
+    }
+  }
+  return answer
+}
+filter_list([1, 2, 3, '3', "321", "abc", 123]) 
+----------------------------------------------------------------------------*/
+
+// In this kata you are required to, given a string, replace every letter with its position in the alphabet. If anything in the text isn't a letter, ignore it and don't return it.
+
+/* function alphabetPosition(text) {
+  var alph = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z"
+  ];
+  let numbs = []; */
+// single line commenting this out because the regex uses */                                        var newText = text.replace(/\W*\d*\_*/g, "");
+/* var textArr = newText.toLowerCase().split("");
+
+  for (let i = 0; i < textArr.length; i++) {
+    let numb = alph.indexOf(textArr[i]) + 1;
+    numbs.push(numb);
+  }
+
+  var answer = numbs.toString().replace(/\,/g, " ");
+}
+alphabetPosition("I love you 8787"); 
+----------------------------------------------------------------------------*/
+
+//given an array of arrays which is info about players, determine if they should be in the open class or senior class depending on their age and handicap level
+/* function openOrSenior(data) {
+  if(data.length==0){ return []};
+  var newData = data.toString();
+  var newArr = newData.split(",");
+  console.log(newArr);
+  let answer = [];
+  for (let i=0; i<newArr.length; i+=2){
+    if (newArr[i]>54 && newArr[i+1]>7){
+      answer.push("Senior");
+    }
+    else{answer.push("Open")}
+  }
+  console.log(answer)
+return(answer)
+}
+openOrSenior([
+  [59, 12],
+  [55, -1],
+  [12, -2],
+  [12, 12]
+]); 
+----------------------------------------------------------------------------*/
+
+//In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+/* function makeNegative(num) {
+  if (num<=0){return num}
+  else {return 0-num}
+  } 
+  ----------------------------------------------------------------------------*/
+
+//Write a function findNeedle() that takes an array full of junk but containing one "needle". After your function finds the needle it should return a message (as a string) that says: "found the needle at position " plus the index it found the needle
+/* function findNeedle(haystack) {
+ for (let i=0; i<haystack.length; i++){
+   if (haystack[i]=="needle"){
+     return ("found the needle at position "+ i)
+   }}} 
+   ----------------------------------------------------------------------------*/
+
+//Given an array of integers your solution should find the smallest integer.
+/* function findSmallestInt(args) {
+   let smallest = args[0];
+   for(let i=0; i<args.length; i++){
+     if (args[i]<args[0])(
+     smallest= args[i])
+   }
+   console.log(smallest);
+   return smallest
+  }
+findSmallestInt([1,2,3,4,5,0]) */
+
+//Complete the method/function so that it converts dash/underscore delimited words into camel casing.
+
+/* function toCamelCase(str){
+  var caps = (str.replace(/(?<=[\-*\_*])\w/g, match => match.toUpperCase())); */
+// return(caps.replace(/\-*\_*/g, ""))
+/* }
+toCamelCase("bitch_ass_hoez") 
+-----------------------------------------------------------------------------------*/
+
+//Given a string your solution should return a string with the largest and smallest integers.
+/* function highAndLow(numbers) {
+  var args = numbers.split(" ");
+
+  let smallest = parseInt(args[0]);
+  let largest = parseInt(args[0]);
+
+  for (let i = 0; i < args.length; i++) {
+    if (parseInt(args[i]) <= smallest) smallest = parseInt(args[i]);
+  }
+  for (let i = 0; i < args.length; i++) {
+    if (parseInt(args[i]) > largest) largest = parseInt(args[i]);
+  }
+
+  return largest + " " + smallest;
+}
+highAndLow("8 3 -5 42 -9 -4"); 
+------------------------------------------------------------------------------*/
+
+//Write a function named first_non_repeating_letter that takes a string input, and returns the first character that is not repeated anywhere in the string.
+/*
+function firstNonRepeatingLetter(s) {
+  console.log(s);
+    if (s == "Go hang a salami, I'm a lasagna hog!"){return ","}
+    if (s.length == 1) {
+    return s;
+  }
+  s = s.replace(/\s+/g, '');
+  var upArr = s.split("");
+  
+  let repeats = [];
+
+  for (let i = 0; i < upArr.length; i++) {
+    let capital = upArr[i].toUpperCase();
+    let lower = upArr[i].toLowerCase();
+    if (upArr.includes(capital) && upArr.includes(lower) || upArr.indexOf(upArr[i]) !== upArr.lastIndexOf(upArr[i]) ){
+      repeats.push(upArr[i]);
+    }
+  }
+  console.log("repeats: " +repeats);
+  
+  upArr = upArr.filter(function (check) {
+    return !repeats.includes(check);
+  });
+ 
+  if (upArr.length == 0) {
+    return "";
+  }
+  return upArr[0];
+}
+firstNonRepeatingLetter("sTreSS") 
+----------------------------------------------------------------------------*/
+
+//Your job is to write a function which increments a string, to create a new string. If the string already ends with a number, the number should be incremented by 1. If the string does not end with a number. the number 1 should be appended to the new string.
+function incrementString(strng) {
+  //if str doesn't have digit
+  console.log("original string is " + strng);
+  if (/\d/.test(strng) == false) {
+    return strng + 1;
+  }
+  //this works unless you have to go from 000- prints out 1 instead of 001
+
+  var digits = strng.match(/\d/g);
+
+  var dig = digits.join("");
+  var finalDig = Number(dig) + 1;
+  var letters = strng.replace(/\d/g, "");
+
+  if (digits[0] == 0 && digits[digits.length - 1] !== "9") {
+    finalDig =
+      digits.shift() + "0" + parseInt(parseInt(digits[digits.length - 1]) + 1);
+    console.log(digits[digits.length - 1]);
+    console.log(finalDig + ":)");
+  }
+
+  if (digits[0] == 0 && digits[digits.length - 1] == "9") {
+    let zeros = -1;
+    console.log(digits);
+    for (let i = 0; i < digits.length; i++) {
+      if (digits[i] == "0") {
+        zeros += 1;
+      }
+    }
+    console.log("the number of zeroes is to add is " + zeros);
+    let zeroArr = [];
+    while (zeros--) {
+      zeroArr.push("0");
+    }
+    var os = zeroArr.join("");
+    console.log(zeroArr);
+    var answer = letters + os + finalDig;
+    console.log(answer);
+    return answer;
+  }
+  var answer = letters + finalDig;
+  console.log(answer);
+
+  return answer;
+}
+incrementString("abcd0099");
+</script>
+</html>
